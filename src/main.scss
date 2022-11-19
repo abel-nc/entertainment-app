@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$bg-main: hsl(223, 30%, 9%);
+$bg-secondary: hsl(223, 36%, 14%);
+$color-primary: #fff;
+$color-secondary: hsl(223, 3%, 54%);
+$color-accent: hsl(223, 36%, 42%);
+$color-accent-secondary: rgb(252, 71, 71);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bg-main;
+  overflow-x: hidden;
+  font-family: 'Outfit', sans-serif;
+}
+
+
+// GLOBAL CLASSES
+.color-primary {
+  color: $color-primary;
+}
+.color-secondary {
+  color: $color-secondary;
+}
+.color-tertiary {
+  color: hsl(223, 30%, 9%);
+}
+.color-accent {
+  color: $color-accent;
+}
+.w-100 {
+  width: 100%;
+}
+.h-100 {
+  height: 100%;
+}
+.back-secondary {
+  background-color: hsl(223, 36%, 14%);
+}
+.hover-accent-secondary {
+  transition: 120ms ease;
+  &:hover {
+    color: $color-accent-secondary;
+  }
+}
+.c-pointer {
+  cursor: pointer;
+}
+.outline-0 {
+  outline: none;
+}
+.placeholder-secondary {
+  &::placeholder {
+    color: $color-secondary;
+  }
+}
+.fs-small {
+  font-size: 0.75rem;
+}
+.select-none {
+  user-select: none;
+}
+.margin-center {
+  margin: 0 auto;
+}
+
+
+// NAV 
+nav {
+  top: 1.5rem;
+  bottom: 1.5rem;
+  border-radius: 17px;
+
+  .active {
+    color: $color-primary;
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  .avatar {
+    width: 40px;
+  }
+}
+
+
+// APP CONTAINER
+.app-ct {
+  padding-left: calc(72px + 3rem);
+  width: 100%;
+}
+
+
+// SEARCHER 
+.searcher {
+  input[type="text"] {
+    border: none;
+    border-bottom: 2px solid transparent;
+
+    &:focus {
+      border-bottom: 2px solid $color-accent;
+    }
+  }
+}
+
+
+// CARDS 
+.carousel-card {
+  width: 430px;
+  height: 230px;
+  min-width: 430px;
+  min-height: 230px;
+  background-size: cover;
+  background-position: center;
+  &:last-child {
+    margin: 0 !important;
+  }
+}
+
+.card-img {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+// CUSTOM SCROLLBAR
+.h-scroll {
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-accent;
+    border-radius: 50px;
+  }
+}
+
+
+// GENRE CARD
+.genre-card {
+  height: 176px;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+
+// DETAILS PAGE
+.details-page {
+
+  .poster {
+    width: 85%;
+    max-width: 370px;
+  }
+}
+
+
+// LOADER 
+.loader {
+  animation: rotate 1s infinite;
+  height: 50px;
+  width: 50px;
+}
+
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+  content: '';
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+.loader:before {
+  animation: ball1 1s infinite;
+  background-color: #cb2025;
+  box-shadow: 30px 0 0 #f8b334;
+  margin-bottom: 10px;
+}
+.loader:after {
+  animation: ball2 1s infinite;
+  background-color: #00a096;
+  box-shadow: 30px 0 0 #97bf0d;
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: -webkit-rotate(0deg) -webkit-scale(0.8);
+    -webkit-transform: rotate(0deg) scale(0.8);
+    -moz-transform: -webkit-rotate(0deg) scale(0.8);
+    transform: -webkit-rotate(0deg) scale(0.8);
+  }
+  50% {
+    -webkit-transform: -webkit-rotate(360deg) -webkit-scale(1.2);
+    -webkit-transform: rotate(360deg) scale(1.2);
+    -moz-transform: rotate(360deg) scale(1.2);
+    transform: rotate(360deg) scale(1.2);
+  }
+  100% {
+    -webkit-transform: -webkit-rotate(720deg) -webkit-scale(0.8);
+    -webkit-transform: rotate(720deg) scale(0.8);
+    -moz-transform: rotate(720deg) scale(0.8);
+    transform: rotate(720deg) scale(0.8);
+  }
+}
+
+@keyframes ball1 {
+  0% {
+    box-shadow: 30px 0 0 #f8b334;
+  }
+  50% {
+    box-shadow: 0 0 0 #f8b334;
+    margin-bottom: 0;
+    -webkit-transform: -webkit-translate(15px, 15px);
+    -webkit-transform: translate(15px, 15px);
+    -moz-transform: translate(15px, 15px);
+    transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #f8b334;
+    margin-bottom: 10px;
+  }
+}
+
+@keyframes ball2 {
+  0% {
+    box-shadow: 30px 0 0 #97bf0d;
+  }
+  50% {
+    box-shadow: 0 0 0 #97bf0d;
+    margin-top: -20px;
+    -webkit-transform: -webkit-translate(15px, 15px);
+    -webkit-transform: translate(15px, 15px);
+    -moz-transform: translate(15px, 15px);
+    transform: translate(15px, 15px);
+  }
+  100% {
+    box-shadow: 30px 0 0 #97bf0d;
+    margin-top: 0;
+  }
+}
+
+
+// RESPONSIVE DESIGN
+@media screen and (max-width: 1035px) {
+  .details-page {
+
+    .poster {
+      width: 85%;
+      max-width: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  // NAV
+  nav {
+    top: 0;
+    bottom: unset;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+  
+    .active {
+      color: $color-primary;
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  
+    .avatar {
+      width: 40px;
+    }
+  }
+  // APP CONTAINER
+  .app-ct {
+    padding-left: 0;
+    padding-top: 80px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  // REM
+  html {
+    font-size: 12px;
+  }
+  // NAV 
+  nav {
+    .logo {
+      width: 30px;
+    }
+    .avatar {
+      width: 30px;
+    }
+  }
+  // CARDS
+  .carousel-card {
+    width: 300px;
+    height: 155px;
+    min-width: 300px;
+    min-height: 155px;
+  }
+
+  .card-img {
+      height: 130px;
+  }
+
+  .genre-card {
+    height: 130px;
+  }
+}
