@@ -9,6 +9,7 @@ import Series from './pages/Series';
 import Genre from './pages/Genre';
 import Search from './pages/Search';
 import Details from './pages/Details';
+import Footer from './components/Footer';
 
 const App = () => {
 
@@ -32,6 +33,7 @@ const App = () => {
       <div className='app-ct'>
         <Searcher />
         <Pages />
+        <Footer />
       </div>
     </main>
   )
